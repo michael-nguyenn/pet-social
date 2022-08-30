@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Login from '../components/login/Login';
 import Signup from '../components/signup/Signup';
 
-const HomePage = () => {
+const LandingPage = () => {
   return (
     <Fragment>
       <Head>
@@ -20,4 +20,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default LandingPage;
