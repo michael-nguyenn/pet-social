@@ -12,3 +12,15 @@
         @content;
     }
 }
+
+@mixin button {
+	border-radius: 5px;
+	background-color: $primary-button-color;
+	color: $secondary-font-color;
+}
+
+@mixin input {
+	border-radius: 50px;
+	background-color: $input-background-color;
+	color: $input-font-color;
+}
