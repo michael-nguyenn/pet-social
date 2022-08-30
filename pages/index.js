@@ -1,5 +1,7 @@
-import { Fragment } from "react";
-import Head from "next/head";
+import { Fragment } from 'react';
+import Head from 'next/head';
+import Login from '../components/login/Login';
+import Signup from '../components/signup/Signup';
 
 const HomePage = () => {
   return (
@@ -12,6 +14,8 @@ const HomePage = () => {
         />
       </Head>
       <h1>Hello from Home Page</h1>
+      <Login />
+      <Signup />
     </Fragment>
   );
 };
