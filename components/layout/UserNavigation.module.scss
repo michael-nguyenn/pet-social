@@ -1,0 +1,81 @@
+@use '../../styles//partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.header {
+  background-color: $primary-background-color;
+
+  &__container {
+    background-color: $primary-background-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+
+    @include tablet {
+      max-width: 1090px;
+      padding: 0 2rem;
+    }
+  }
+
+  &__logo {
+    font-family: 'Pacifico';
+    font-size: 1.8rem;
+    width: 100%;
+    padding-left: 1rem;
+
+    @include tablet {
+      padding-left: 0;
+    }
+  }
+
+  &__nav {
+    width: 30%;
+  }
+
+  &__navList {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0;
+  }
+
+  &__navHome {
+    display: none !important;
+    margin: 0;
+
+    @include tablet {
+      display: inline-block !important;
+      min-width: 70% !important;
+      min-height: 70% !important;
+    }
+  }
+
+  &__navHeart {
+    display: none !important;
+
+    @include tablet {
+      display: inline-block !important;
+      min-width: 100% !important;
+      min-height: 105% !important;
+    }
+  }
+
+  &__navUser {
+    display: none !important;
+
+    @include tablet {
+      display: inline-block !important;
+      min-width: 80% !important;
+      min-height: 75% !important;
+    }
+  }
+
+  &__navAdd {
+    width: 2.5rem;
+    text-align: center;
+    background-color: $primary-button-color;
+    color: $secondary-font-color;
+    border-radius: 5px;
+  }
+}
