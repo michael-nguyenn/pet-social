@@ -47,7 +47,7 @@ function AuthForm() {
           />
         </div>
 
-        <div>
+        <div className={classes.form__container}>
           <label htmlFor="password" className={classes.form__label} />
           <input
             type="password"
