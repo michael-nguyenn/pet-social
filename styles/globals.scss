@@ -1,0 +1,8 @@
+@use "./styles/partials/variables" as *;
+@use "./styles/partials/mixins" as *;
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: $font-stack;
+}

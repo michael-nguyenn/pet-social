@@ -6,7 +6,7 @@ import UserNavigation from './UserNavigation';
 const Layout = props => {
   return (
     <Fragment>
-      <UserNavigation />
+      {/* <UserNavigation /> */}
       <main className={classes.main}>{props.children}</main>
     </Fragment>
   );
