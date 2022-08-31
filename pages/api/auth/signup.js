@@ -30,7 +30,7 @@ async function handler(req, res) {
   if (existingUser) {
     res
       .status(422)
-      .json({ message: 'User exists already! Please use different Email' });
+      .send({ message: 'User exists already! Please use different Email' });
 
     client.close();
     return;

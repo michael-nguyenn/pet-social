@@ -1,5 +1,6 @@
 import classes from './auth-form.module.scss';
 import { useState, useRef } from 'react';
+import { createUser } from '../../utilities/createUser';
 
 function AuthForm() {
   const emailInputRef = useRef();
@@ -14,7 +15,20 @@ function AuthForm() {
   async function submitHandler(event) {
     event.preventDefault();
 
-    console.log(event);
+    const enteredEmail = emailInputRef.current.value;
+    const enteredPassword = passwordInputRef.current.value;
+
+    // TO DO: ... ADD VALIDATION ON CLIENT SIDE
+
+    if (isLogin) {
+      // TO DO: ... LOG USER IN
+    } else {
+      try {
+        const result = await createUser(enteredEmail, enteredPassword);
+      } catch (error) {
+        console.log(error);
+      }
+    }
   }
 
   return (
