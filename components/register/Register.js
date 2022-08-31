@@ -1,23 +1,32 @@
 import classes from './Register.module.scss';
 import axios from 'axios';
+import { useRouter } from 'next/router';
+import { useRef } from 'react';
 
 const Register = () => {
+  const router = useRouter();
+  const { userId } = router.query;
+
+  const nameInputRef = useRef();
+  const dateOfBirthInputRef = useRef();
+  const animalTypeInputRef = useRef();
+  const breedInputRef = useRef();
+  const cityInputRef = useRef();
+  const favouriteToysInputRef = useRef();
+  const favouriteFoodInputRef = useRef();
+
   const handleSubmit = async event => {
-    // Put or patch?
-    // Will signup post new user or will register?
-    // Should we put all functions in app level?
     event.preventDefault();
 
-    const userId = this.props.match.params.id;
     try {
-      await axios.post(`/api/register/`, {
-        name: event.target.name.value,
-        dateOfBirth: event.target.dateOfBirth.value,
-        animalType: event.target.animalType.value,
-        breed: event.target.breed.value,
-        city: event.target.city.value,
-        favouriteToys: event.target.favouriteToys.value,
-        favouriteFood: event.target.favouriteFood.value,
+      await axios.patch(`/api/register/${userId}`, {
+        name: nameInputRef.current.value,
+        dateOfBirth: dateOfBirthInputRef.current.value,
+        animalType: animalTypeInputRef.current.value,
+        breed: breedInputRef.current.value,
+        city: cityInputRef.current.value,
+        favouriteToys: favouriteToysInputRef.current.value,
+        favouriteFood: favouriteFoodInputRef.current.value,
       });
     } catch (error) {
       console.log('Error! Did not register.', error);
@@ -33,6 +42,7 @@ const Register = () => {
           placeholder="Name"
           className={classes.input}
           id="name"
+          ref={nameInputRef}
           required
         ></input>
         <input
@@ -40,36 +50,42 @@ const Register = () => {
           className={classes.input}
           type="date"
           id="dateOfBirth"
+          ref={dateOfBirthInputRef}
           required
         ></input>
         <input
           placeholder="Animal Type"
           className={classes.input}
           id="animalType"
+          ref={animalTypeInputRef}
           required
         ></input>
         <input
           placeholder="Breed"
           className={classes.input}
           id="breed"
+          ref={breedInputRef}
           required
         ></input>
         <input
           placeholder="City"
           className={classes.input}
           id="city"
+          ref={cityInputRef}
           required
         ></input>
         <input
           placeholder="Favourite Toys"
           className={classes.input}
           id="favouriteToys"
+          ref={favouriteToysInputRef}
           required
         ></input>
         <input
           placeholder="Favourite Food"
           className={classes.input}
           id="favouriteFood"
+          ref={favouriteFoodInputRef}
           required
         ></input>
         <button className={classes.button} onSubmit={handleSubmit}>
