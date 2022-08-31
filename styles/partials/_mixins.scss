@@ -1,26 +1,26 @@
-@use "./variables" as *;
+@use './variables' as *;
 
 // Breakpoints //
 @mixin tablet {
-    @media screen and (min-width: $tablet-breakpoint) {     
-        @content;
-    }
+  @media screen and (min-width: $tablet-breakpoint) {
+    @content;
+  }
 }
 
 @mixin desktop {
-    @media screen and (min-width: $desktop-breakpoint) {
-        @content;
-    }
+  @media screen and (min-width: $desktop-breakpoint) {
+    @content;
+  }
 }
 
 @mixin button {
-	border-radius: 5px;
-	background-color: $primary-button-color;
-	color: $secondary-font-color;
+  border-radius: 20px;
+  background-color: $primary-button-color;
+  color: $secondary-font-color;
 }
 
 @mixin input {
-	border-radius: 50px;
-	background-color: $input-background-color;
-	color: $input-font-color;
+  border-radius: 50px;
+  background-color: $input-background-color;
+  color: $input-font-color;
 }
