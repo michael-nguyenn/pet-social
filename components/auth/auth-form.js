@@ -1,6 +1,7 @@
 import classes from './auth-form.module.scss';
 import { useState, useRef } from 'react';
 import { createUser } from '../../utilities/createUser';
+import { signIn } from 'next-auth/client';
 
 function AuthForm() {
   const emailInputRef = useRef();
@@ -21,7 +22,15 @@ function AuthForm() {
     // TO DO: ... ADD VALIDATION ON CLIENT SIDE
 
     if (isLogin) {
-      // TO DO: ... LOG USER IN
+      const result = await signIn('credentials', {
+        redirect: false,
+        email: enteredEmail,
+        password: enteredPassword,
+      });
+
+      if (!result.error) {
+        // TO DO... SET SOME AUTH STATE
+      }
     } else {
       try {
         const result = await createUser(enteredEmail, enteredPassword);
