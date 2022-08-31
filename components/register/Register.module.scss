@@ -1,0 +1,58 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $primary-background-color;
+    padding: 5rem 0;
+    height: 90vh;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #E7F2F8;
+        border-radius: 20px;
+        padding: 2rem;
+
+        @include tablet {
+            padding: 2rem 3rem;
+        }
+    }
+
+    .title {
+        color: $primary-button-color;
+        margin-bottom: 2rem;
+    }
+
+    input {
+        @include input;
+    }
+
+    button {
+        @include button;
+    }
+}
+
+
+// On focus of date of birth field, change placeholder to date format
+.input[type="date"]::before {
+	color: $input-font-color;
+	content: attr(placeholder);
+}
+
+.input[type="date"] {
+	color: #ffffff;
+}
+
+.input[type="date"]:focus,
+.input[type="date"]:valid {
+color: $input-font-color;
+}
+
+.input[type="date"]:focus::before,
+.input[type="date"]:valid::before {
+	content: "" !important;
+}
