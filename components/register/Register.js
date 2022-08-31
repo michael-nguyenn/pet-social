@@ -10,7 +10,7 @@ const Register = () => {
 
     const userId = this.props.match.params.id;
     try {
-      await axios.post(`http://localhost:3000/register/${userId}`, {
+      await axios.post(`/api/register/`, {
         name: event.target.name.value,
         dateOfBirth: event.target.dateOfBirth.value,
         animalType: event.target.animalType.value,
