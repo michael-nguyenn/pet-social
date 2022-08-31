@@ -21,6 +21,8 @@ function UserNavigation() {
                     src={home}
                     alt="Link to homepage"
                     className={classes.header__navHome}
+                    width={50}
+                    height={40}
                   />
                 </Link>
               </li>
@@ -35,6 +37,8 @@ function UserNavigation() {
                     src={heart}
                     alt="Link to all liked posts"
                     className={classes.header__navHeart}
+                    width={30}
+                    height={30}
                   />
                 </Link>
               </li>
@@ -44,6 +48,8 @@ function UserNavigation() {
                     src={account}
                     alt="Link to user profile"
                     className={classes.header__navUser}
+                    width={50}
+                    height={40}
                   />
                 </Link>
               </li>
