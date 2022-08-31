@@ -1,6 +1,7 @@
 import { Fragment } from 'react';
 import Head from 'next/head';
 import AuthForm from '../components/auth/auth-form';
+import Hero from '../components/hero/Hero';
 
 const LandingPage = () => {
   return (
@@ -12,8 +13,7 @@ const LandingPage = () => {
           content="This needs a description eventually..."
         />
       </Head>
-      <h1>Hello from Home Page</h1>
-
+      <Hero />
       <AuthForm />
     </Fragment>
   );

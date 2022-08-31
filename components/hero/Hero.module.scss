@@ -1,0 +1,16 @@
+@use '../../styles/partials/variables' as *;
+
+.hero {
+  background-color: $primary-background-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 400px;
+  margin: 0 auto;
+
+  &__header {
+    font-family: 'Pacifico';
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: $primary-button-color;
+  }
+}
