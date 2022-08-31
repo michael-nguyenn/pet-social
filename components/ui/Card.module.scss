@@ -1,0 +1,11 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.card {
+  @include tablet {
+    width: 320px;
+    border: 1px solid $primary-border-color;
+    border-radius: 10px;
+    margin: 0 auto;
+  }
+}
