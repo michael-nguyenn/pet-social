@@ -8,6 +8,7 @@
   justify-content: center;
   align-items: center;
   margin: 0 auto;
+  padding-bottom: 20rem;
 
   &__wrapper {
     @include tablet {
@@ -36,9 +37,6 @@
 
   &__input {
     @include input;
-    border: none;
-    padding: 0.35rem 0 0.35rem 0.35rem;
-    margin-bottom: 1rem;
   }
 }
 
