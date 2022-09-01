@@ -41,6 +41,8 @@ async function handler(req, res) {
     password: hashedPassword,
   });
 
+  client.close();
+
   res.status(201).json({ message: 'created User!' });
 }
 
