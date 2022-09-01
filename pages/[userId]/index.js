@@ -1,9 +1,10 @@
 import { Fragment } from 'react';
+import Post from '../../components/post/Post';
 
 const HomePage = () => {
   return (
     <Fragment>
-      <h1>Hello from User Home </h1>
+      <Post />
     </Fragment>
   );
 };
