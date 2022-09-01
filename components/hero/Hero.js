@@ -1,11 +1,12 @@
 import classes from './Hero.module.scss';
 import logo from '../../assets/images/dog.png';
 import Image from 'next/image';
+import petSocialLogo from '../../assets/images/petsocial-logo.png';
 
 function Hero() {
   return (
     <section className={classes.hero}>
-      <h1 className={classes.hero__header}>Pet Social</h1>
+      <Image height={100} width={350} src={petSocialLogo}></Image>
       <div className={classes.hero__image}>
         <Image src={logo} alt="dog logo" />
       </div>

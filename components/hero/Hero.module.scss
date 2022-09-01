@@ -7,9 +7,7 @@
   align-items: center;
   padding-top: 5rem;
 
-  &__header {
-    font-family: 'Pacifico';
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: $primary-button-color;
+  &__logo {
+    height: 1rem;
   }
 }

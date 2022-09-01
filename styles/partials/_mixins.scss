@@ -14,11 +14,12 @@
 }
 
 @mixin button {
-	border-radius: 20px;
+	border-radius: 50px;
+	font-size: 1.125rem;
 	background-color: $primary-button-color;
 	color: $secondary-font-color;
 	border: none;
-	padding: .75rem 1.5rem;
+	padding: .75rem 2rem;
 	cursor: pointer;
 
 	&:hover {
@@ -27,11 +28,12 @@
 }
 
 @mixin input {
-	border-radius: 20px;
+	border-radius: 50px;
 	border: none;
 	background-color: $input-background-color;
 	color: $input-font-color;
 	padding: .75rem 1rem;
 	margin-bottom: 1rem;
-	width: 20rem
+	width: 20rem;
+	font-size: 1rem;
 }

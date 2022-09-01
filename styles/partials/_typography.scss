@@ -1,12 +1,5 @@
 @use "../partials/variables" as *;
 
-// Logo
-@font-face {
-    font-family: "Pacifico";
-    src: url("../../assets/fonts/Pacifico-Regular.ttf") format("truetype");
-    font-style: normal;
-}
-
 // Regular
 @font-face {
     font-family: $font-stack;

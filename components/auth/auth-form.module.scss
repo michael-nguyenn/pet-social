@@ -12,19 +12,20 @@
 
   &__wrapper {
     @include tablet {
-      background-color: #e7f2f8;
-      border-radius: 10px;
-      padding: 2rem 4rem;
+      background-color: $auth-box-background-color;
+      border-radius: 20px;
+      padding: 3rem;
     }
   }
 
   &__header {
-    margin: 0;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     text-align: center;
+    color: $secondary-font-color;
 
     @include tablet {
       margin-bottom: 2rem;
+      color: $primary-font-color;
     }
   }
 }
@@ -37,6 +38,11 @@
 
   &__input {
     @include input;
+    width: 15rem;
+
+    @include tablet {
+      width: 18rem;
+    }
   }
 }
 
@@ -46,11 +52,8 @@
   align-items: center;
 
   &__action {
-    margin: 1rem 0;
     @include button;
-    padding: 0.35rem;
-    border: none;
-    width: 80%;
+    margin: 1rem 0 2rem 0;
   }
 
   &__toggle {
@@ -62,5 +65,21 @@
     font-weight: inherit;
     line-height: inherit;
     padding: 0;
+    color: blue;
+    cursor: pointer;
+  }
+
+  &__switch {
+    display: flex;
+    gap: 1rem;
+  }
+
+  &__text {
+    color: $secondary-font-color;
+    font-size: 1.125rem;
+
+    @include tablet {
+      color: $primary-font-color;
+    }
   }
 }
