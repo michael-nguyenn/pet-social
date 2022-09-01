@@ -1,9 +1,62 @@
 @use '../../styles/partials/variables' as *;
 @use '../../styles/partials/mixins' as *;
 
+.user {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+
+  &__name {
+    margin-left: 0.5rem;
+  }
+}
+
 .post {
   &__image {
-    max-width: 320px;
-    height: 100px;
+    max-width: 20rem;
+    height: 6.25rem;
+
+    @include tablet {
+      max-width: 20rem;
+    }
+  }
+}
+
+.postActivity {
+  padding: 0.2rem 1rem;
+  font-size: 0.8125rem;
+}
+
+.actionIcons {
+  display: flex;
+  align-items: center;
+}
+
+.caption {
+  &__user {
+    font-weight: 600;
+  }
+  &__text {
+    margin-left: 1rem;
+  }
+}
+
+.commentsCollapsed {
+  padding: 0.6rem 0;
+  color: grey;
+}
+
+.comments {
+  margin-bottom: 0.4rem;
+  &__commenter {
+    font-weight: 600;
+  }
+  &__comment {
+    margin-left: 1rem;
+  }
+}
+
+.commentForm {
+  @include tablet {
   }
 }
