@@ -3,39 +3,49 @@
 
 .information {
     display: flex;
-    flex-direction: column;
     padding: 1rem;
-    gap: 1rem;
+    gap: 3rem;
+    align-items: center;
+
+    @include tablet {
+        width: 50rem;
+        margin: 2rem auto;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
 
     &__header {
         display: flex;
         justify-content: space-between;
-        align-items: center
-    }
+        align-items: center;
 
-    &__button {
-        @include button;
-        border-radius: 5px;
-        padding: .25rem .5rem;
+        @include tablet {
+            justify-content: flex-start;
+            gap: 4rem;
+        }
     }
 
     &__details {
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        @include tablet {
+            justify-content: flex-start;
+        }
     }
 
-    &__picture {
-        width: 3rem;
-        height: 3rem;
-        background-color: lightgrey;
-        border-radius: 2rem;
-    }
-
-    &__edit {
-        @include button;
-        border-radius: 5px;
-
+    &__numbers {
+        @include tablet {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            margin-right: 3rem;
+        }
     }
 
     &__about {
@@ -43,5 +53,64 @@
         gap: 2rem;
         flex-wrap: wrap;
         row-gap: 1rem;
+    }
+}
+
+.button {
+
+    &__mobile {
+        @include button;
+        border-radius: 5px;
+        padding: .25rem .5rem;
+
+        @include tablet {
+            display: none;
+        }
+    }
+
+    &__tablet {
+        display: none;
+
+        @include tablet{
+            @include button;
+            display: flex;
+            border-radius: 5px;
+            padding: .5rem 1.75rem;
+        }
+    }
+
+    &__edit {
+        @include button;
+        border-radius: 5px;
+
+        @include tablet {
+            display: none;
+        }
+    }
+
+}
+
+.picture {
+    &__mobile {
+        width: 3rem;
+        height: 3rem;
+        background-color: lightgrey;
+        border-radius: 2rem;
+
+        @include tablet {
+            display: none;
+        }
+    }
+
+    &__tablet {
+        display: none;
+
+        @include tablet {
+            display: flex;
+            width: 7.5rem;
+            height: 7rem;
+            background-color: lightgrey;
+            border-radius: 10rem;
+        }
     }
 }
