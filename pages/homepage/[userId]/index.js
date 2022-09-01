@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import Post from '../../components/post/Post';
+import Post from '../../../components/post/Post';
 
 const HomePage = () => {
   return (
