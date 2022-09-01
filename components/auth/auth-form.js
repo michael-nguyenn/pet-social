@@ -70,18 +70,24 @@ function AuthForm() {
               className={classes.form__input}
             />
           </div>
-
           <div className={classes.button}>
             <button className={classes.button__action}>
-              {isLogin ? 'Login' : 'Create Account'}
+              {isLogin ? 'Login' : 'Signup'}
             </button>
-            <button
-              type="button"
-              className={classes.button__toggle}
-              onClick={switchAuthModeHandler}
-            >
-              {isLogin ? 'New to Pet Social?' : 'Already have an account?'}
-            </button>
+            <div className={classes.button__switch}>
+              {isLogin ? (
+                <p className={classes.button__text}>New to Pet Social?</p>
+              ) : (
+                <p className={classes.button__text}>Already have an account?</p>
+              )}
+              <button
+                type="button"
+                className={classes.button__toggle}
+                onClick={switchAuthModeHandler}
+              >
+                {isLogin ? 'Signup' : 'Login'}
+              </button>
+            </div>
           </div>
         </form>
       </div>
