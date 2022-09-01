@@ -1,0 +1,9 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.post {
+  &__image {
+    max-width: 320px;
+    height: 100px;
+  }
+}
