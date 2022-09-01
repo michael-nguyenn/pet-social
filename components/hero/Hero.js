@@ -3,7 +3,6 @@ import logo from '../../assets/images/dog.png';
 import Image from 'next/image';
 
 function Hero() {
-  console.log(logo);
   return (
     <section className={classes.hero}>
       <h1 className={classes.hero__header}>Pet Social</h1>

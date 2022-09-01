@@ -19,7 +19,7 @@ const Register = () => {
     event.preventDefault();
 
     try {
-      await axios.patch(`/api/register/${userId}`, {
+      const result = await axios.patch(`/api/register/${userId}`, {
         name: nameInputRef.current.value,
         dateOfBirth: dateOfBirthInputRef.current.value,
         animalType: animalTypeInputRef.current.value,
@@ -28,14 +28,14 @@ const Register = () => {
         favouriteToys: favouriteToysInputRef.current.value,
         favouriteFood: favouriteFoodInputRef.current.value,
       });
+      return result;
     } catch (error) {
       console.log('Error! Did not register.', error);
     }
-    event.target.reset();
   };
 
   return (
-    <form className={classes.form}>
+    <form className={classes.form} onSubmit={handleSubmit}>
       <div className={classes.container}>
         <h1 className={classes.title}>Tell Us About Yourself!</h1>
         <input
@@ -88,9 +88,7 @@ const Register = () => {
           ref={favouriteFoodInputRef}
           required
         ></input>
-        <button className={classes.button} onSubmit={handleSubmit}>
-          Submit
-        </button>
+        <button className={classes.button}>Submit</button>
       </div>
     </form>
   );
