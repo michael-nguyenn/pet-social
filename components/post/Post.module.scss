@@ -43,7 +43,7 @@
 
 .commentsCollapsed {
   padding: 0.6rem 0;
-  color: grey;
+  color: $input-font-color;
 }
 
 .comments {
@@ -60,23 +60,32 @@
   padding: 0.2rem 1rem;
   font-size: 0.625rem;
   text-transform: uppercase;
+  color: $input-font-color;
 }
 
 .commentFormMobile {
   display: flex;
+  justify-content: space-between;
   padding: 0.2rem 1rem;
 
   @include tablet {
     display: none;
   }
 
+  &__inputWrapper {
+    display: flex;
+    width: 100%;
+  }
+
   &__input {
     border: none;
-    margin-left: 0.6rem;
+    width: 100%;
   }
 
   &__button {
-    display: none;
+    border: none;
+    background: none;
+    color: $primary-background-color;
   }
 }
 
