@@ -5,8 +5,11 @@ import comment from '../../assets/icons/comment-icon.jpeg';
 import user from '../../assets/icons/account-icon.png';
 import Image from 'next/image';
 import Card from '../ui/Card';
+import React, { useState } from 'react';
 
 const Post = props => {
+  const [inputClicked, setInputClicked] = useState();
+
   return (
     <Card>
       <div className={classes.user}>
@@ -55,15 +58,27 @@ const Post = props => {
           <span className={classes.comments__commenter}>Dot the Doodle</span>
           <span className={classes.comments__comment}>You look marvelous!</span>
         </div>
-        <form className={classes.commentForm}>
-          <input
-            className={classes.commentForm__input}
-            placeholder="Add a comment..."
-          ></input>
-          <button className={classes.commentForm__button}>Post</button>
-        </form>
-        <div className={classes.postTime}>1 hour ago</div>
       </div>
+      <form className={classes.commentFormMobile}>
+        <Image
+          className={classes.commentFormMobile__userIcon}
+          src={user}
+          alt="User icon"
+        ></Image>
+        <input
+          className={classes.commentFormMobile__input}
+          placeholder="Add a comment..."
+        ></input>
+        <button className={classes.commentFormMobile__button}>Post</button>
+      </form>
+      <div className={classes.timestamp}>1 hour ago</div>
+      <form className={classes.commentFormTablet}>
+        <input
+          className={classes.commentFormTablet__input}
+          placeholder="Add a comment..."
+        ></input>
+        <button className={classes.commentFormTablet__button}>Post</button>
+      </form>
     </Card>
   );
 };
