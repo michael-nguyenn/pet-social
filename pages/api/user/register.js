@@ -1,4 +1,5 @@
 import { getSession } from 'next-auth/client';
+import { connectToDatabase } from '../../../utilities/db';
 
 async function handler(req, res) {
   if (req.method !== 'PATCH') {
