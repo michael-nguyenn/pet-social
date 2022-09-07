@@ -3,7 +3,7 @@ import Head from 'next/head';
 import AuthForm from '../components/auth/auth-form';
 import Hero from '../components/hero/Hero';
 
-const LandingPage = () => {
+const LandingPage = props => {
   return (
     <Fragment>
       <Head>
@@ -13,7 +13,7 @@ const LandingPage = () => {
           content="This needs a description eventually..."
         />
       </Head>
-      <Hero />
+      <Hero user={props.user} />
       <AuthForm />
     </Fragment>
   );
