@@ -111,6 +111,7 @@ const Post = props => {
           </span>
           <p></p>
         </div>
+        {/*click on the collapsed comments to hide the comment count and display all comments*/}
         <div className={classes.commentsCollapsed}>
           <span>View all 24 comments</span>
         </div>
