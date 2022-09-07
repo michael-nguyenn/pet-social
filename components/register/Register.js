@@ -19,7 +19,7 @@ const Register = () => {
     event.preventDefault();
 
     try {
-      const result = await axios.patch(`/api/register/${userId}`, {
+      const result = await axios.patch(`/api/user/register`, {
         name: nameInputRef.current.value,
         dateOfBirth: dateOfBirthInputRef.current.value,
         animalType: animalTypeInputRef.current.value,
@@ -30,7 +30,7 @@ const Register = () => {
       });
       return result;
     } catch (error) {
-      console.log('Error! Did not register.', error);
+      console.log('Error! Did not register :(', error);
     }
   };
 

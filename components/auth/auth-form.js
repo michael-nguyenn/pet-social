@@ -2,10 +2,12 @@ import classes from './auth-form.module.scss';
 import { useState, useRef } from 'react';
 import { createUser } from '../../utilities/createUser';
 import { signIn } from 'next-auth/client';
+import { useRouter } from 'next/router';
 
 function AuthForm() {
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
+  const router = useRouter();
 
   const [isLogin, setIsLogin] = useState(true);
 
@@ -30,10 +32,20 @@ function AuthForm() {
 
       if (!result.error) {
         // TO DO... SET SOME AUTH STATE
+
+        router.push('/home');
       }
     } else {
       try {
-        const result = await createUser(enteredEmail, enteredPassword);
+        await createUser(enteredEmail, enteredPassword);
+
+        await signIn('credentials', {
+          redirect: false,
+          email: enteredEmail,
+          password: enteredPassword,
+        });
+
+        router.push('/register');
       } catch (error) {
         console.log(error);
       }
