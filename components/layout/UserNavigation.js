@@ -16,9 +16,6 @@ function UserNavigation() {
     signOut();
   }
 
-  console.log(session);
-  console.log(loading);
-
   return (
     <Fragment>
       <header className={classes.header}>
