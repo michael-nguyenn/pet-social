@@ -43,7 +43,7 @@
 
 .commentsCollapsed {
   padding: 0.6rem 0;
-  color: grey;
+  color: $input-font-color;
 }
 
 .comments {
@@ -56,7 +56,62 @@
   }
 }
 
-.commentForm {
+.timestamp {
+  padding: 0.2rem 1rem;
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  color: $input-font-color;
+}
+
+.commentFormMobile {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.2rem 1rem;
+
   @include tablet {
+    display: none;
+  }
+
+  &__inputWrapper {
+    display: flex;
+    width: 100%;
+  }
+
+  &__input {
+    border: none;
+    width: 100%;
+  }
+
+  &__button {
+    border: none;
+    background: none;
+    color: $primary-background-color;
+  }
+}
+
+.commentFormTablet {
+  display: none;
+
+  @include tablet {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid $primary-border-color;
+    padding: 0.6rem;
+  }
+
+  &__input {
+    width: 100%;
+    text-align: center;
+    border: none;
+
+    &:focus {
+      border: none;
+    }
+  }
+
+  &__button {
+    border: none;
+    background: none;
+    color: $primary-background-color;
   }
 }
