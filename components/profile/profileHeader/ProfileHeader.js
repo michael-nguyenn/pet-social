@@ -1,8 +1,15 @@
 import Image from 'next/image';
 import classes from './ProfileHeader.module.scss';
+import { useRouter } from 'next/router';
 
 function ProfileHeader(props) {
   console.log(props.user);
+  const router = useRouter();
+
+  const clickHandler = () => {
+    router.push('/upload');
+  };
+
   return (
     <section className={classes.information}>
       <div className={classes.picture__tablet}></div>
@@ -10,7 +17,9 @@ function ProfileHeader(props) {
         <div className={classes.information__header}>
           <h2>{props.user.name}</h2>
           <button className={classes.button__mobile}>+</button>
-          <button className={classes.button__tablet}>Edit Profile</button>
+          <button className={classes.button__tablet} onClick={clickHandler}>
+            Edit Profile
+          </button>
         </div>
         <div className={classes.information__details}>
           <div className={classes.picture__mobile}></div>
