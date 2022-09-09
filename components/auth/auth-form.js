@@ -54,6 +54,7 @@ function AuthForm() {
 
   return (
     <section className={classes.auth}>
+      <div>test</div>
       <div className={classes.auth__wrapper}>
         <h1 className={classes.auth__header}>
           {isLogin ? 'Login' : 'Sign Up'}
