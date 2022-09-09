@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 
-const BUCKET_URL = 'http://awbuckit.s3-website.us-east-2.amazonaws.com/';
+const BUCKET_URL = process.env.AWS_BUCKET_URL;
 
 export default function UploadForm() {
   const [file, setFile] = useState();
